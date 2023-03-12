@@ -23,7 +23,7 @@ const RecommendedVideos = () => {
       
           
         } catch (error) {
-          alert("Location not found");
+          alert("not found");
         }
       };
 
