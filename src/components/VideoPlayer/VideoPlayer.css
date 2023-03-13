@@ -1,0 +1,15 @@
+.head {
+  display: flex;
+  flex-direction: column;
+}
+
+.video_player {
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 40px;
+}
+
+.RecommendedVideos h1 {
+  text-align: center;
+  margin-top: 50px;
+}
