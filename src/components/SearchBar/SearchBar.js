@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
-import "./SearchBar.css";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import ChannelRow from "../ChannelRow/ChannelRow";
 import VideoRow from "../VideoRow/VideoRow";
+import "./SearchBar.css";
 
 const SearchBar = ({ inputSearch }) => {
   const [channelRow, setChannelRow] = useState({});
@@ -124,14 +125,16 @@ const SearchBar = ({ inputSearch }) => {
       <hr />
       {videoRows.map((item) => {
         return (
-          <VideoRow
-            title={item.title}
-            image={item.image}
-            views={item.views}
-            timestamp={item.timestamp}
-            channel={item.channel}
-            description={item.description}
-          />
+          <Link key={item.videoId} to={`/video/${item.videoId}`}>
+            <VideoRow
+              title={item.title}
+              image={item.image}
+              views={item.views}
+              timestamp={item.timestamp}
+              channel={item.channel}
+              description={item.description}
+            />
+          </Link>
         );
       })}
     </div>

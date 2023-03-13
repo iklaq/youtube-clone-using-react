@@ -1,15 +1,13 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Header from "./components/Header/Header";
-import SideBar from "./components/SideBar/SideBar";
 import RecommendedVideos from "./components/RecommendedVideos/RecommendedVideos";
-import "./App.css";
 import SearchBar from "./components/SearchBar/SearchBar";
+import SideBar from "./components/SideBar/SideBar";
+import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
-function App() {
+const App = ()=> {
   const [inputSearch, setInputSearch] = useState("");
 
   const onToggleSearchButton = (value) => {
@@ -25,6 +23,8 @@ function App() {
         />
 
         <Routes>
+          <Route path="/video/:videoId" element={<VideoPlayer />} />
+
           <Route
             path="/"
             element={
