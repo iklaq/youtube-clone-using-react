@@ -18,10 +18,10 @@ const RecommendedVideos = () => {
         try {
           const response = await fetch(`https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=12&regionCode=US&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`);
           const data = await response.json();
-          console.log(data.items)
+      
           createVideoCards(data.items);
       
-          
+           
         } catch (error) {
           alert("not found");
         }
